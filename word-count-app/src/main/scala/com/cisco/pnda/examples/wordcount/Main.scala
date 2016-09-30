@@ -41,15 +41,13 @@ object Main {
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
 
-    val input_path = args(0)
-    val output_path = args(0)
+    val inputPath = args(0)
+    val outputPath = args(1)
 
-    val shakespeare = sc.textFile(input_path + "/shakespeare.txt")
-    val cervantes = sc.textFile(input_path + "/cervantes.txt")
-    val tolstoy = sc.textFile(input_path + "/tolstoy.txt")
+    val inputRdd = sc.textFile(inputPath)
 
-    counts = shakespeare.flatMap(lambda line: line.split(" ")).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
-    counts.saveAsTextFile(output_path)
+    val counts = inputRdd.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
+    counts.saveAsTextFile(outputPath)
 
     logger.info("Application done")
   }

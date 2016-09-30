@@ -54,7 +54,7 @@ either express or implied.
    <dependencies>
      <dependency>
         <groupId>com.cisco.pnda</groupId>
-        <artifactId>spark-batch-example</artifactId>
+        <artifactId>word-count-app</artifactId>
         <version>0.1.0</version>
      </dependency>
    </dependencies>
