@@ -14,7 +14,7 @@
     <dependencySets>
       <dependencySet>
         <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
-        <outputDirectory>/oozie/example/lib/</outputDirectory>
+        <outputDirectory>/oozie/word-count/lib/</outputDirectory>
         <useProjectArtifact>false</useProjectArtifact>
         <useTransitiveDependencies>true</useTransitiveDependencies>
         <scope>runtime</scope>

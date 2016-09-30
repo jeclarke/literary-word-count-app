@@ -1,5 +1,15 @@
 <workflow-app name="${component_application}-subworkflow" xmlns="uri:oozie:workflow:0.4">
-    <start to="process"/>
+    <start to="download"/>
+    <action name="download">
+             <shell xmlns="uri:oozie:shell-action:0.2">
+                 <exec>download.sh</exec>
+                 <argument>${component_archive_url}</argument>
+                 <argument>${component_input_data}</argument>
+                 <file>download.sh#download.sh</file>
+             </shell>
+         <ok to="process"/>
+         <error to="kill"/>
+    </action>
     <action name="process">
          <spark xmlns="uri:oozie:spark-action:0.1">
             <job-tracker>${environment_yarn_resource_manager_host}:${environment_yarn_resource_manager_mr_port}</job-tracker>
