@@ -44,12 +44,14 @@ object Main {
     val inputPath = args(0)
     val outputPath = args(1)
 
+    val start: Long = System.currentTimeMillis
     val inputRdd = sc.textFile(inputPath + "*.txt")
 
-    val counts = inputRdd.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
+    val counts = inputRdd.flatMap(line => line.split(" ")).map(word => (word.replaceAll("[^A-Za-z0-9]", ""), 1)).reduceByKey(_ + _)
     counts.saveAsTextFile(outputPath)
+    val end: Long = System.currentTimeMillis
 
-    logger.info("Application done")
+    logger.info("Application done in " + (end - start))
   }
 }
 
