@@ -47,7 +47,7 @@ object Main {
     val start: Long = System.currentTimeMillis
     val inputRdd = sc.textFile(inputPath + "*.txt")
 
-    val counts = inputRdd.flatMap(line => line.split(" ")).map(word => (word.replaceAll("[^A-Za-z0-9]", ""), 1)).reduceByKey(_ + _)
+    val counts = inputRdd.flatMap(line => line.split(" ")).map(word => (word.replaceAll("[^A-Za-z0-9]", ""), 1)).reduceByKey(_ + _).map(tuple => (tuple._2, tuple._1)).sortByKey(false)
     counts.saveAsTextFile(outputPath)
     val end: Long = System.currentTimeMillis
 
