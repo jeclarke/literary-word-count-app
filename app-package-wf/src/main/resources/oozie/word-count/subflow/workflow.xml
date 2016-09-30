@@ -2,10 +2,12 @@
     <start to="download"/>
     <action name="download">
              <shell xmlns="uri:oozie:shell-action:0.2">
+                 <job-tracker>${environment_yarn_resource_manager_host}:${environment_yarn_resource_manager_mr_port}</job-tracker>
+                 <name-node>${environment_name_node}</name-node>                              
                  <exec>download.sh</exec>
                  <argument>${component_archive_url}</argument>
                  <argument>${component_input_data}</argument>
-                 <file>download.sh#download.sh</file>
+                 <file>${mainAppPath}/lib/download.sh#download.sh</file>
              </shell>
          <ok to="process"/>
          <error to="kill"/>

@@ -44,7 +44,7 @@ object Main {
     val inputPath = args(0)
     val outputPath = args(1)
 
-    val inputRdd = sc.textFile(inputPath)
+    val inputRdd = sc.textFile(inputPath + "*.txt")
 
     val counts = inputRdd.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
     counts.saveAsTextFile(outputPath)

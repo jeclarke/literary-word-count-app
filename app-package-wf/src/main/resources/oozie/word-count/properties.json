@@ -1,9 +1,9 @@
 {
     "executors_num":"2",
-    "executors_mem":"256M",
-    "driver_mem":"256M",
+    "executors_mem":"128M",
+    "driver_mem":"128M",
     "start":"${deployment_start}",
     "end":"${deployment_end}",
-    "input_data": "/user/pnda/PNDA_datasets/bulk/literature/*",
+    "input_data": "/tmp/literature/",
     "archive_url": "https://s3-eu-west-1.amazonaws.com/pnda-archive/literature.tar.gz"
 }
