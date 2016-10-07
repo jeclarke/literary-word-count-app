@@ -2,7 +2,7 @@
 
 ## Overview
 
-This app does a word count of the combined works of Shakespeare, Tolstoy and Cervantes.
+This app does a word count of the some works of Shakespeare, Tolstoy and Cervantes.
 
 The purpose is a standard benchmark for a small batch job that can be used to verify a cluster is working as expected.
 
