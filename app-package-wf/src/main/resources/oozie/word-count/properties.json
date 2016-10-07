@@ -2,6 +2,7 @@
     "executors_num":"2",
     "executors_mem":"128M",
     "driver_mem":"128M",
+    "freq_in_mins":"20",
     "start":"${deployment_start}",
     "end":"${deployment_end}",
     "input_data": "/tmp/literature/",
