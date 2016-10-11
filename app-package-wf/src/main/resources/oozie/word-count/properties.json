@@ -6,5 +6,5 @@
     "start":"${deployment_start}",
     "end":"${deployment_end}",
     "input_data": "/tmp/literature/",
-    "archive_url": "http://www.gutenberg.org/cache/epub/100/pg100.txt http://www.gutenberg.org/cache/epub/996/pg996.txt http://www.gutenberg.org/files/2600/2600-0.txt"
+    "archive_url": "https://s3-eu-west-1.amazonaws.com/pnda-archive/literature.tar.gz"
 }
